@@ -1,0 +1,8 @@
+- name: Local Test
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Test message
+      debug:
+        msg: "AWX is working!"
