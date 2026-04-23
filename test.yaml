@@ -1,8 +1,8 @@
-- name: Local Test
-  hosts: localhost
-  connection: local
-  gather_facts: no
+- name: Restart Patrol Agent
+  hosts: all
+  become: yes
   tasks:
-    - name: Test message
-      debug:
-        msg: "AWX is working!"
+    - name: Restart Patrol Agent
+      shell: |
+        /opt/bmc/Patrol3/scripts.d ./S50PatrolAgent.sh stop
+        /opt/bmc/Patrol3/scripts.d ./S50PatrolAgent.sh start
