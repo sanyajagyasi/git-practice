@@ -1,8 +1,8 @@
 - name: Restart Patrol Agent
-  hosts: all
-  become: yes
+  hosts: localhost
+  connection: local
+  gather_facts: no
   tasks:
-    - name: Restart Patrol Agent
-      shell: |
-        /opt/bmc/Patrol3/scripts.d ./S50PatrolAgent.sh stop
-        /opt/bmc/Patrol3/scripts.d ./S50PatrolAgent.sh start
+    - name: Test
+      debug:
+        msg: "Simulating Patrol restart"
